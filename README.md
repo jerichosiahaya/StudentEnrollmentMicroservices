@@ -115,4 +115,4 @@ Insert enrollment using `Enrollment service`:
 }
 ```
 
-Both of `courseId` and `studentId` are foreign key so you can't update both of that values, you can delete that row instead. The only thing you can update from that table is `grade` and HTTP method update authorization roles for this table is set only to `admin`, so student can't change their own grade because that's doesn't make any sense 😕. 
+Both of `courseId` and `studentId` are foreign key so you can't update both of that values, you can delete that row instead. The only thing you can update from that table is `grade` and HTTP method update authorization roles for this table is set only to `admin`, so student can't change their own grade.
