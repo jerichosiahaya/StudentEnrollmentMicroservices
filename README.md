@@ -68,4 +68,51 @@ This diagram below will simply explain how these microservices works:
 ```
 This API is limited to only make `100` request in period time of `60 minutes`, after the limit exceeded user must wait `5 minutes` before make another request. Also, the access token is only valid to an hour, after that user have to generate another access token since I don't provide refresh token function 🐵.
 
+### Example of Request Body 🐕‍🦺
 
+Login or register using `Authentication service`:
+
+```
+{
+  "username": "yourusername",
+  "password": "yOurP@ssword12345"
+}
+```
+
+By default, Identity requires that passwords contain an uppercase character, lowercase character, a digit, and a non-alphanumeric character. Passwords must be at least six characters long.
+
+Insert student using `Enrollment service`:
+```
+{
+  "userName": "preferredanemail@gmail.com",
+  "firstName": "Steve",
+  "middleName": " ",
+  "lastName": "Garrigan",
+  "phoneNumber": "12345678910",
+  "dob": "1988-08-23"
+}
+```
+
+Enrollment date will return `thisDate` if you ain't fill one.
+
+Insert course using `Enrollment service`:
+
+```
+{
+  "title": "nameofthecourse",
+  "credits": 3
+}
+```
+
+Insert enrollment using `Enrollment service`:
+
+```
+{
+  "enrollmentId": 3,
+  "courseId": 2,
+  "studentId": 3,
+  "grade": "B+"
+}
+```
+
+Both of `courseId` and `studentId` are foreign key so you can't update both of that values, you can delete that row instead. The only thing you can update from that table is `grade` and HTTP method update authorization roles for this table is set only to `admin`, so student can't change their own grade because that's doesn't make any sense 😕. 
