@@ -50,13 +50,22 @@ This diagram below will simply explain how these microservices works:
 
 | | HTTP Method        | Endpoint       | Authorization Roles |
 |---| ------------- |:-------------:| -------------------|
-|Get all list of enrollments| GET      | `/api/enrollments` | All |
+|Get all list of enrollments| GET      | `/api/enrollments` | Admin |
 |Get enrollment by id| GET     | `/api/enrollments/{id}`   | All |
-|Insert enrollment| POST | `/api/enrollments`     | Admin |
+|Insert enrollment| POST | `/api/enrollments`     | All |
 |Update enrollment| PUT | `/api/enrollments/{id}`     | Admin |
 |Delete enrollment| DELETE | `/api/enrollments/{id}`     | All |
 
+### API Rate Limiting
 
-
+```
+"RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "60m",
+        "PeriodTimespan": 300,
+        "Limit": 100
+      }
+```
+This API is limited to only make `100` request in period time of `60 minutes`, after the limit exceeded user must wait `5 minutes` before make another request. Also, the access token is only valid to an hour, after that user have to generate another access token since I don't provide refresh token function 🐵.
 
 
