@@ -31,7 +31,7 @@ This diagram below will simply explain how these microservices works:
 |---| ------------- |:-------------:| -------------------|
 |Get all list of students| GET      | `/api/students` | Admin |
 |Get student by id| GET     | `/api/students/id/{id}`   | All |
-|Get student by username| GET | `/api/students/username/{id}`     | All |
+|Get student by username| GET | `/api/students/username/{username}`     | All |
 |Insert student| POST | `/api/students`     | Admin |
 |Update student| PUT | `/api/students/{id}`     | All |
 |Delete student| DELETE | `/api/students/{id}`     | Admin |
