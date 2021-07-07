@@ -108,7 +108,6 @@ Insert enrollment using `Enrollment service`:
 
 ```
 {
-  "enrollmentId": 3,
   "courseId": 2,
   "studentId": 3,
   "grade": "B+"
