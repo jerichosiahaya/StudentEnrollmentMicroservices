@@ -20,8 +20,8 @@ This diagram below will simply explain how these microservices works:
 | | HTTP Method        | Endpoint       |
 |---| ------------- |:-------------:| 
 |To generate token| POST      | `/api/auth/login` |
-|To register a user| POST     | `/api/auth/register/admin`   |
-|To register an admin| POST | `/api/auth/register/user`     |
+|To register a user| POST     | `/api/auth/register/user`   |
+|To register an admin| POST | `/api/auth/register/admin`     |
 
 ### Enrollment Service 📝
 
