@@ -115,3 +115,5 @@ Insert enrollment using `Enrollment service`:
 ```
 
 Both of `courseId` and `studentId` are foreign key so you can't update both of that values, you can delete that row instead. The only thing you can update from that table is `grade` and HTTP method update authorization roles for this table is set only to `admin`, so student can't change their own grade.
+
+More detail and updated documentation, please check the [API documentation wiki](https://github.com/jerichosiahaya/StudentEnrollmentMicroservices/wiki/API-Documentation-%F0%9F%90%92).
